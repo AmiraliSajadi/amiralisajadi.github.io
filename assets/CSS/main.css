@@ -1,0 +1,106 @@
+/* inter font */
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+/* font */
+a {
+    color: #0563BA;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #0563BA;
+    text-decoration: none;    
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+h2 {
+    font-size: 1.93rem;
+}
+
+p, li{
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+b {
+    font-size: 1.1rem;
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+.font-heavy {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.font-regular {
+font-weight: 400;
+} */
+
+
+/* positioning */
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+  }
+
+.left {
+text-align: left;
+}
+
+.right {
+text-align: right;
+}
+
+.center {
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+  .justify {
+text-align: justify;
+}
+
+#header-row {
+    margin-top: 25px;
+}
+
+#last-row {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.mypic {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+    display: block;
+    border-radius: 100%;
+}
+
+#links {
+    margin-top: 20px;
+}
+
+#links img {
+    height: 2em;
+    width: 2em;
+}
