@@ -76,34 +76,48 @@
             </div>
         </div>
 
-        <!-- Things I know
-        <div class="row">
-            <div class="col-12">
-                <h2>Things I know<small><small>
-                            <samll> (well)</samll>
-                        </small></small></h2>
-
-                <b>Machine Learning (Python)</b>
-                <ul>
-                    <li>Keras</li>
-                    <li>Scikit-Learn</li>
-                    <br>
-                    <li>Numpy</li>
-                    <li>Pandas</li>
-                    <li>Matplotlib</li>
-                </ul>
-
-                <b>Android Development (Java)</b>
-                <ul>
-                    <li>Android Studio</li>
-                </ul>
-            </div>
-        </div> -->
-
         <!-- Publications -->
         <div class="row">
             <div class="col-12">
                 <h2>Publications</h2>
+
+                                <!-- Publication -->
+                <div class="publication">
+                    <p>
+                        <strong>AXE: An Agentic eXploit Engine for Confirming Zero-Day Vulnerability Reports</strong>
+                        <br><strong>Amirali Sajadi</strong>, S. Dutta, and P. Chatterjee
+                        <br>Under Review
+                        <br><a href="#" class="dropdown-btn">Read Abstract</a> | <a
+                            href="assets/papers/AXE.pdf" target="_blank"
+                            class="button-link">Preprint</a>
+                    </p>
+                    <div class="abstract-content">
+                        <p>
+                            Vulnerability detection tools are widely adopted in software projects, yet they often overwhelm maintainers with false positives and non-actionable reports. Automated exploitation systems can help validate these reports; however, existing approaches typically operate in isolation from detection pipelines, failing to leverage available metadata such as vulnerability type and source-code location.
+                            
+                            This paper investigates grey-box exploitation as a vulnerability triage methodology by leveraging bare minimum detection metadata i.e., CWE classification and location, to automatically confirm which reported vulnerabilities are exploitable. We present AXE, a multi-agent framework that operationalizes this paradigm through iterative planning, source inspection, and dynamic execution.
+                            
+                            Evaluated on the CVE-Bench dataset, AXE achieves a 30% exploitation success rate, a 3x improvement over state-of-the-art black-box baselines. Even in a single-agent configuration, grey-box metadata yields a 1.75x performance gain. Systematic error analysis shows that most failed attempts arise from specific reasoning gaps, including misinterpreted vulnerability semantics and unmet execution preconditions. For successful exploits, AXE produces actionable, reproducible proof-of-concept artifacts, demonstrating its utility in streamlining Web vulnerability triage and remediation. We further evaluate AXE’s generalizability through a case study on a recent real-world vulnerability not included in CVE-Bench.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Publication -->
+                <div class="publication">
+                    <p>
+                        <strong>TraceView: Interactive Visualization of Agentic Program Repair Trajectories</strong>
+                        <br><strong>Amirali Sajadi</strong>, T. Nguyen, K. Huynh, E. Parra, and P. Chatterjee
+                        <br>The 42nd IEEE International Conference on Software Maintenance and Evolution (ICSME), Tool Demonstration Track, 2026
+                        <br><a href="#" class="dropdown-btn">Read Abstract</a> | <a
+                            href="assets/papers/TraceView.pdf" target="_blank"
+                            class="button-link">Preprint</a>
+                    </p>
+                    <div class="abstract-content">
+                        <p>
+                            LLM-based automated program repair (APR) agents generate patches to fix software bugs with minimal human intervention. These agents often produce long trajectories of reasoning, tool use, and feedback to produce candidate patches. Final patch outcomes show whether a repair attempt succeeded or failed, but they do not show how the agent reached that outcome, or where the process became repetitive or misaligned with the task. This makes agentic repair failures difficult to diagnose, reproduce, and prevent. To help developers address these challenges, we present <i>TraceView</i>, an interactive tool for labeling and visualizing repair trajectories from APR systems. TraceView organizes raw and pre-labeled agentic runs with <i>Thought</i>, <i>Action</i>, and <i>Result</i> components to support semantic relation labeling and diagnosis, and renders the resulting trajectory as graph views. Furthermore, TraceView provides relation filters, patch outcome summaries, metrics, and node-level evidence panels to help users inspect how <i>reasoning</i>, <i>actions</i>, and <i>feedback</i> connect across the various steps of an agentic repair attempt. We evaluate TraceView with five researchers through a survey-based user study. Participants reported that TraceView made trajectories easier to scan and that its overview-to-detail workflow helped them better understand repair behavior. The TraceView source code is available at <a href="https://github.com/SOAR-Lab/agent-traj-visualization" target="_blank">https://github.com/SOAR-Lab/agent-traj-visualization</a>. A screencast of TraceView is available at <a href="https://youtu.be/9ZCh7Ifj2AQ" target="_blank">https://youtu.be/9ZCh7Ifj2AQ</a>.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Publication -->
                 <div class="publication">
