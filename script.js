@@ -108,3 +108,30 @@ if (journeyArt) {
     startJourney();
   }
 }
+
+// Follow the device initially, then remember an explicit choice across pages.
+const themeToggle = document.querySelector('.theme-toggle');
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    themeToggle.innerHTML = `<i data-lucide="${theme === 'dark' ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+  }
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#111923' : '#f5f8fc');
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+}
+let savedTheme;
+try { savedTheme = localStorage.getItem('amirali-theme'); } catch (_) {}
+applyTheme(['light','dark'].includes(savedTheme) ? savedTheme : systemTheme.matches ? 'dark' : 'light');
+if (themeToggle) themeToggle.addEventListener('click', () => {
+  const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(theme);
+  try { localStorage.setItem('amirali-theme', theme); } catch (_) {}
+});
+systemTheme.addEventListener('change', event => {
+  let chosen;
+  try { chosen = localStorage.getItem('amirali-theme'); } catch (_) {}
+  if (!chosen) applyTheme(event.matches ? 'dark' : 'light');
+});
