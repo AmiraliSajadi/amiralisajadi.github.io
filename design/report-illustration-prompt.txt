@@ -1,0 +1,6 @@
+Use case: illustration-story.
+Asset type: one landscape 3:2 thumbnail illustration for an academic software-security portfolio.
+Create a simple conceptual editorial illustration of a vulnerability report helping an AI agent develop and test an exploit. On a pure white background, show a paper report at left with three clearly differentiated highlighted information blocks, a compact abstract agent workspace in the center, and a small terminal/test window at right. Two thin arrows connect them. Make it visually attractive and readable at 300 pixels wide.
+Style: restrained flat vector-like editorial drawing, crisp charcoal lines, soft sage-green accents, subtle paper texture, generous whitespace. Match a quiet academic website with warm cream surroundings.
+Only these short labels: "Report", "Agent", "Exploit test".
+Avoid robot faces, brains, padlock clichés, gradients, neon, 3D, large titles, tables, charts, numbers, invented study results, logos, or watermarks. This is a symbolic concept illustration, not a scientific result figure.
