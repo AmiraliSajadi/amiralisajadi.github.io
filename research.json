@@ -15,7 +15,7 @@
     "id": "repair",
     "topic": "risks",
     "title": "How Safe Are AI-Generated Patches?",
-    "venue": "TOSEM · Minor revision",
+    "venue": "ACM Transactions on Software Engineering and Methodology (TOSEM) · Accepted",
     "year": "2026",
     "summary": "A large-scale study of security risks in LLM and agentic automated program repair on SWE-bench.",
     "pdf": "Are_LLM_Patches_Secure.pdf",

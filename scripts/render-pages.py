@@ -1,3 +1,5 @@
+"""Render the static site pages from the research data and page templates."""
+
 from pathlib import Path
 from html import escape
 import json
@@ -14,15 +16,17 @@ TOPICS = [
     ('human', 'Human aspects of software engineering', 'Trust, emotions, and psycholinguistic analysis in developer communication.', ['trust', 'emotions', 'psych']),
 ]
 SHORT = {'repair': 'How safe are AI-generated patches?', 'trace': 'TraceView', 'llm': 'Do LLMs consider security?', 'axe': 'AXE', 'sast': 'CodeQL false positives and query refinements', 'report': 'Vulnerability reports and AI agents', 'trust': 'Interpersonal trust in OSS', 'emotions': 'Emotions in developer conversations', 'psych': 'Psycholinguistic analysis in SE'}
-VENUES = {'repair': 'TOSEM revision', 'trace': 'ICSME', 'llm': 'EMSE', 'axe': 'Under review', 'sast': 'Preprint', 'report': 'Ongoing', 'trust': 'ICSE NIER', 'emotions': 'ESEC/FSE IVR', 'psych': 'IST'}
+VENUES = {'repair': 'TOSEM · Accepted', 'trace': 'ICSME', 'llm': 'EMSE', 'axe': 'Under review', 'sast': 'Preprint', 'report': 'Ongoing', 'trust': 'ICSE NIER', 'emotions': 'ESEC/FSE IVR', 'psych': 'IST'}
 
 def shell(title, active, main):
+    """Wrap page content in the shared navigation and site layout."""
     nav = ''.join(f'<a href="{href}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key, href, label in [('research','/research/','Research'),('about','/about/','About'),('contact','/contact/','Contact')])
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Amirali Sajadi. Research on AI-assisted software development, software security, and vulnerability analysis at Drexel University."><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f5f8fc"><script>try{{const t=localStorage.getItem("amirali-theme");document.documentElement.dataset.theme=t|| (matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}}catch(e){{}}</script><title>{title}</title><link rel="stylesheet" href="/style.css"><script src="/vendor/lucide.min.js" defer></script><script src="/script.js" defer></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header wrap"><a class="home-link" href="/">Amirali Sajadi</a><nav aria-label="Main navigation">{nav}</nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode"><i data-lucide="moon" aria-hidden="true"></i></button></header>{main}<footer class="wrap"><span>Amirali Sajadi</span><div><a href="/assets/cv.pdf" target="_blank" rel="noopener">CV</a><a href="https://scholar.google.com/citations?user=wyZsULIAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a><a href="https://github.com/AmiraliSajadi" target="_blank" rel="noopener">GitHub</a><a href="mailto:amirali.sajadi@drexel.edu">Email</a></div></footer></body></html>'''
 
 def tile(key):
+    """Render a research tile for the home page."""
     p = BY_ID[key]
     figure_class = '' if key in SPACED_FIGURES else ' figure-fill'
     return f'''<article class="work-tile"><button class="tile-image{figure_class}" type="button" data-figure-key="{key}" aria-label="Enlarge image for {escape(p['title'],quote=True)}"><img src="/assets/{p['image']}" alt="{escape(p.get('imageAlt', 'Figure from ' + p['title']),quote=True)}" loading="lazy"></button><div class="tile-meta">{VENUES[key]} <span>{p['year']}</span></div><h3><a href="/research/#paper-{key}">{SHORT[key]}</a></h3><p>{escape(p['summary'])}</p></article>'''
@@ -34,6 +38,7 @@ for n, (key, title, summary, ids) in enumerate(TOPICS, 1):
 (ROOT / 'index.html').write_text(shell('Amirali Sajadi', 'home', f'<main id="main" class="wrap home-main">{intro}{themes}</main>'))
 
 def paper_row(p):
+    """Render one publication entry for the research page."""
     figure_class = '' if p['id'] in SPACED_FIGURES else ' figure-fill'
     pdf = f'/assets/papers/{p["pdf"]}' if p.get('pdf') else None
     heading = f'<a href="{pdf}" target="_blank" rel="noopener">{escape(p["title"])}</a>' if pdf else escape(p['title'])
