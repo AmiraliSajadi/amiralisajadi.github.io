@@ -16,7 +16,7 @@ TOPICS = [
     ('human', 'Human aspects of software engineering', 'Trust, emotions, and psycholinguistic analysis in developer communication.', ['trust', 'emotions', 'psych']),
 ]
 SHORT = {'repair': 'How safe are AI-generated patches?', 'trace': 'TraceView', 'llm': 'Do LLMs consider security?', 'axe': 'AXE', 'sast': 'CodeQL false positives and query refinements', 'report': 'Vulnerability reports and AI agents', 'trust': 'Interpersonal trust in OSS', 'emotions': 'Emotions in developer conversations', 'psych': 'Psycholinguistic analysis in SE'}
-VENUES = {'repair': 'TOSEM · Accepted', 'trace': 'ICSME', 'llm': 'EMSE', 'axe': 'Under review', 'sast': 'Preprint', 'report': 'Ongoing', 'trust': 'ICSE NIER', 'emotions': 'ESEC/FSE IVR', 'psych': 'IST'}
+VENUES = {'repair': 'TOSEM', 'trace': 'ICSME', 'llm': 'EMSE', 'axe': 'Under review', 'sast': 'Preprint', 'report': 'Ongoing', 'trust': 'ICSE NIER', 'emotions': 'ESEC/FSE IVR', 'psych': 'IST'}
 
 def shell(title, active, main):
     """Wrap page content in the shared navigation and site layout."""
