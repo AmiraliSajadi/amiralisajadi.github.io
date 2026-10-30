@@ -40,6 +40,8 @@ for n, (key, title, summary, ids) in enumerate(TOPICS, 1):
 def paper_row(p):
     """Render one publication entry for the research page."""
     figure_class = '' if p['id'] in SPACED_FIGURES else ' figure-fill'
+    meta_class = ' paper-meta-with-track' if p.get('track') else ''
+    track = f'<span class="paper-track">{escape(p["track"])}</span>' if p.get('track') else ''
     pdf = f'/assets/papers/{p["pdf"]}' if p.get('pdf') else None
     heading = f'<a href="{pdf}" target="_blank" rel="noopener">{escape(p["title"])}</a>' if pdf else escape(p['title'])
     links = ''
@@ -51,7 +53,7 @@ def paper_row(p):
     if p.get('abstract') and p['abstract'] != p['summary']:
         abstract = f'<details><summary>Abstract</summary><p>{escape(p["abstract"])}</p></details>'
     authors = escape(p['authors']).replace('Amirali Sajadi', '<strong>Amirali Sajadi</strong>')
-    return f'''<article class="paper" id="paper-{p['id']}" data-topic="{p['topic']}"><button class="paper-figure{figure_class}" type="button" data-figure-key="{p['id']}" aria-label="Enlarge image for {escape(p['title'],quote=True)}"><img src="/assets/{p['image']}" alt="{escape(p.get('imageAlt', 'Figure from ' + p['title']),quote=True)}" loading="lazy"></button><div><div class="paper-meta">{escape(p['venue'])}<span>{p['year']}</span></div><h2>{heading}</h2><p class="paper-summary">{escape(p['summary'])}</p><p class="authors">{authors}</p><div class="paper-actions">{links}</div>{abstract}</div></article>'''
+    return f'''<article class="paper" id="paper-{p['id']}" data-topic="{p['topic']}"><button class="paper-figure{figure_class}" type="button" data-figure-key="{p['id']}" aria-label="Enlarge image for {escape(p['title'],quote=True)}"><img src="/assets/{p['image']}" alt="{escape(p.get('imageAlt', 'Figure from ' + p['title']),quote=True)}" loading="lazy"></button><div><div class="paper-meta{meta_class}"><span class="paper-venue">{escape(p['venue'])}</span>{track}<span class="paper-year">{p['year']}</span></div><h2>{heading}</h2><p class="paper-summary">{escape(p['summary'])}</p><p class="authors">{authors}</p><div class="paper-actions">{links}</div>{abstract}</div></article>'''
 filters = ''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">{label}</button>' for key, label in [('all','All work'),('exploitation','Exploitation'),('analysis','Static analysis'),('risks','Security risks'),('human','Human aspects')])
 research = f'''<main id="main" class="wrap page-main"><div class="page-intro"><h1>Research</h1><p>Published papers, preprints, and ongoing work.</p></div><div class="research-toolbar"><div class="filters" role="group" aria-label="Filter research by topic">{filters}</div><span id="count" class="research-count" aria-live="polite">9 projects</span></div><div id="papers">{''.join(paper_row(p) for p in PAPERS)}</div></main>'''
 (ROOT / 'research/index.html').write_text(shell('Research · Amirali Sajadi', 'research', research))
