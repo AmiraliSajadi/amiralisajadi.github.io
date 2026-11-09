@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" fill="none" class="journey-art" role="img" aria-labelledby="journey-title journey-description">
-  <title id="journey-title">Animated skyline</title>
-  <desc id="journey-description">A small figure walks along a continuous skyline and off the right edge while sparse clouds drift overhead.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" fill="none" class="journey-art" aria-hidden="true">
   <style>
 .journey-art.is-active .city-line{stroke-dasharray:1;animation:journey-draw 2s ease-out var(--draw-delay,0s) both}
 .journey-art.is-active .walker-trip{animation:journey-trip 48s linear 1.2s both}
