@@ -158,7 +158,7 @@ footer{font-size:14px;padding-block:28px 32px}
 
 /* Keep the homepage identity and introduction together beside the portrait. */
 .home-overview h1{font-size:32px;line-height:1.2;letter-spacing:-1px;margin:0 0 8px}
-.home-overview .intro-label{margin-bottom:12px}
+.home-overview .intro-label{margin-bottom:18px}
 .home-overview>p.profile-affiliation{font-size:15px;color:var(--muted);margin-bottom:20px}
 .profile-intro .home-profile-photo{margin-bottom:16px}
 @media(max-width:520px){.profile-intro .home-profile{display:block;width:auto}.home-overview h1{font-size:28px}}
@@ -166,3 +166,5 @@ footer{font-size:14px;padding-block:28px 32px}
 .home-profile .profile-affiliation{margin-bottom:0}
 
 .overview-research{margin-top:18px}
+
+@media(min-width:521px){.profile-intro .home-overview{margin-top:-6px}}
