@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" fill="none" class="journey-art" role="img" aria-labelledby="journey-title journey-description">
-  <title id="journey-title">Tehran to Philadelphia</title>
-  <desc id="journey-description">Tehran and Philadelphia share one continuous ground line. A small figure starts between the cities, walks through Philadelphia and off the right edge, while a few sparse clouds drift overhead.</desc>
+  <title id="journey-title">Animated skyline</title>
+  <desc id="journey-description">A small figure walks along a continuous skyline and off the right edge while sparse clouds drift overhead.</desc>
   <style>
 .journey-art.is-active .city-line{stroke-dasharray:1;animation:journey-draw 2s ease-out var(--draw-delay,0s) both}
 .journey-art.is-active .walker-trip{animation:journey-trip 48s linear 1.2s both}
@@ -31,7 +31,7 @@
 }
 </style>
   <defs>
-    <clipPath id="tehran-buildings-clip">
+    <clipPath id="left-buildings-clip">
       <rect x="0" y="0" width="124" height="400" />
     </clipPath>
   </defs>
@@ -79,14 +79,14 @@
       </g>
     </g>
   </g>
-  <g id="tehran-buildings" clip-path="url(#tehran-buildings-clip)" stroke="#789078" stroke-width="2.224" stroke-linecap="round" stroke-linejoin="round">
-    <g id="tehran-west-block">
+  <g id="left-buildings" clip-path="url(#left-buildings-clip)" stroke="#789078" stroke-width="2.224" stroke-linecap="round" stroke-linejoin="round">
+    <g id="left-west-block">
       <path d="M-26 390.9V270H-9V246H10V278H17V390.9Z" fill="#e9ece2" stroke="none" data-building-fill="true" />
       <path d="M8 279H17V390.9H8Z" fill="#e3e8dc" stroke="none" />
       <path d="M-9 292H7M-9 312H7M-9 332H7M-9 352H7M-9 372H7M1 279V384" stroke="#90a18b" stroke-width="1.45" fill="none" class="city-line" pathLength="1" style=";--draw-delay:0.00s" />
       <path d="M-26 390.9V270H-9V246H10V278H17V390.9Z" fill="none" data-building-outline="true" class="city-line" pathLength="1" style=";--draw-delay:0.08s" />
     </g>
-    <g id="tehran-east-block">
+    <g id="left-east-block">
       <path d="M86 390.9V341H104V324H132V390.9Z" fill="#e9ece2" stroke="none" data-building-fill="true" />
       <path d="M120 325H132V390.9H120Z" fill="#e3e8dc" stroke="none" />
       <path d="M108 338H120M108 353H120M108 368H120M108 383H120M95 351V384" stroke="#90a18b" stroke-width="1.45" fill="none" class="city-line" pathLength="1" style=";--draw-delay:0.16s" />

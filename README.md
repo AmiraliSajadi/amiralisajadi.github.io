@@ -20,7 +20,7 @@ The included `.nojekyll` file tells GitHub to publish the prepared static files 
 - `research.json` contains publication details and image references.
 - `style.css` controls the layout and appearance.
 - `script.js` controls research filters, image enlargement, and the Contact animation.
-- `assets/tehran-philadelphia.svg` is the editable Contact illustration and its animation styles.
+- `assets/skyline.svg` is the editable Contact illustration and its animation styles.
 - `assets/personal/` contains the About gallery photos.
 - `assets/papers/` contains linked manuscripts. `assets/cv.pdf` is the CV.
 - `assets/report-illustration.png` is the report project’s concept illustration, created with built-in image generation. Its exact generation prompt is in `design/report-illustration-prompt.txt`.
